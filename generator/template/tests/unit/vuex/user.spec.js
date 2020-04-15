@@ -14,8 +14,6 @@ describe('vuex decorator', () => {
                 commit('USER_INFO_REQUEST', userInfo)
             })
         }
-        // const decoratorClone = cloneDeep(decorator)
-        // 覆盖actions
         userModuleClone.actions = actions
         store = new Vuex.Store(userModuleClone)
     })

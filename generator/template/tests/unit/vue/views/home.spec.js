@@ -34,7 +34,6 @@ describe('header component test', () => {
             })
         }
         Object.assign(userModuleClone.actions, actions)
-        // 增加decorator块state、处理mapstate
         userModuleClone.state.user = userModuleClone.state
         userModuleClone.state.bigdataAI = {
             IoTMenu: [],
