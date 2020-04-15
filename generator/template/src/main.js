@@ -6,16 +6,8 @@ import store from './store'
 import storage from '@/assets/js/storage'
 import './element-ui'
 
-// 全局钩子处理poolId
 router.beforeEach((to, from, next) => {
   console.log('to is --------->', to, from)
-  const { poolId } = to.query
-  if (poolId) {
-    storage.set('currentPoolId', poolId)
-  } else {
-    // 是否需要remove？
-    storage.remove('currentPoolId')
-  }
   next()
 })
 
