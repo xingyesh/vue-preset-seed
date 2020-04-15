@@ -1,0 +1,590 @@
+@import 'variable';
+html,
+body {
+    font-family: Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    width: 100%;
+    height: 100%;
+    min-width: 1300px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+li,
+ol,
+p,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#app {
+    overflow-y: hidden;
+    height: 100%;
+    background: $mainBgColor;
+}
+
+.cmss-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    .layout-header {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        background: $whiteColor;
+    }
+    // .layout-footer {
+
+    // }
+    .layout-siderbar {
+        display: block;
+        position: absolute;
+        width: 180px;
+        left: 0;
+        top: 60px;
+        bottom: 0;
+        background: $menuBgColor;
+    }
+    .layout-container {
+        background: none repeat scroll 0 0 $mainBgColor;
+        position: absolute;
+        left: 180px;
+        right: 0;
+        top: 60px;
+        bottom: 0;
+        width: auto;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow-y: scroll;
+    }
+    .cmss-alpha-header {
+        height: 45px;
+        background-color: rgba(29, 29, 33, .8);
+        line-height: 45px;
+        padding-left: 20px;
+        color: white;
+        .el-button--medium {
+            color: white;
+        }
+    }
+    .layout-container-withoutsiderbar{
+        background: none repeat scroll 0 0 $mainBgColor;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        // overflow-y: scroll;
+        padding-top: 60px;
+    }
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.cmss-item {
+    background-color: $whiteColor;
+    border-radius: 4px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px 20px;
+}
+
+.item-header {
+    .header-title {
+        font-size: 24px;
+        color: $itemHeaderColor;
+        padding: 5px 0px;
+        background-color: $whiteColor;
+        height: 60px;
+        line-height: 60px;
+        padding-left: 20px;
+    }
+    .header-intro {
+        font-size: 12px;
+        color: $itemIntroColor;
+        padding: 5px 0px;
+    }
+}
+
+.item-content {
+    position: relative;
+    .content-header {
+        height: 40px;
+        line-height: 40px;
+        position: relative;
+        .dot {
+            position: absolute;
+            top: 17px;
+            left: 0px;
+            width: 6px;
+            height: 6px;
+            background: inherit;
+            background-color: $primaryColor;
+        }
+        .header-title {
+            margin-left: 10px;
+            color: $itemContentHeaderColor;
+        }
+    }
+    .content-toolbar {
+        padding: 5px 0px;
+        .el-button--small {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+    }
+}
+
+.content-area {
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    .st-progress {
+        color: $inProgressColor;
+    }
+    .st-unbegin {
+        color: $unBeginColor;
+    }
+    .st-pause {
+        color: $pauseColor;
+    }
+    .st-finish {
+        color: $finishedColor
+    }
+    .pagination-footer {
+        padding-top: 20px;
+        text-align: right;
+    }
+}
+
+.cmss-container {
+    position: relative;
+    .container-nav {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid $splitLineColor;
+    }
+}
+
+.nav-title {
+    color: $menuTextColor;
+    border-left: 1px solid $splitLineColor;
+    font-size: 16px;
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+.container-main {
+    padding: 15px 0;
+    .container-item {
+        color: $menuTextColor;
+        .item-header {
+            font-size: 16px;
+            border-bottom: 1px solid $splitLineColor;
+            height: 40px;
+            line-height: 40px;
+        }
+        .item-content {
+            padding: 20px 0;
+        }
+    }
+}
+
+.note {
+    font-size: 12px;
+    color: $noteGray;
+}
+
+.container-footer {
+    margin-top: 10px;
+    padding: 20px 0;
+    border-top: 1px solid $splitLineColor;
+    text-align: right;
+}
+
+.first-column {
+    padding-left: 10px;
+}
+
+.nt-buy-p {
+    font-size: 20px;
+    color: $commonHeaderColor;
+    text-align: center;
+    line-height: 30px;
+    .product-span {
+        color: $primaryColor;
+        font-size: 24px;
+    }
+    .product-buy-link {
+        color: $primaryColor;
+        text-decoration: none;
+    }
+}
+
+.nt-buy-service-info {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #5e5e5e;
+    text-align: left;
+}
+
+.mod-block{
+    margin-bottom: 20px;
+}
+.mod-block .mod-title{
+    font-size: 16px;
+    padding: 18px 0 8px 20px;
+    border-bottom: 1px solid #E9E9E9;
+    width: 700px;
+    margin-bottom: 5px;
+}
+.mod-block .filled-info{
+    padding: 0 20px;
+}
+.mod-block .filled-info .label-area{
+    text-align: left;
+    min-width: 115px;
+    vertical-align: top;
+    padding-top: 13px;
+    color: #666;
+    font-size: 14px;
+    line-height: 32px;
+    display: inline-block;
+}
+.mod-block .filled-info .input-filled{
+    width: 600px;
+    font-size: 12px;
+    display: inline-block;
+    padding-top: 13px;
+}
+.orderPageHead .el-radio-button__inner{
+    background: #F2F6F9;
+    min-width: 90px;
+}
+.orderPageHead .el-radio-button__orig-radio:checked + .el-radio-button__inner,.el-checkbox-button.is-checked .el-checkbox-button__inner{
+    background-color: #D9EDF9;
+    color: #3399e5;
+    border-left-color: #3399e5;
+}
+.order-foot{
+    padding-bottom: 0px;
+    width: 1140px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    height: 60px;
+    margin: 0 auto;
+}
+.fixed-bot-panel{
+    position: absolute;
+    bottom: auto;
+    background: #FFF;
+    width: 1140px;
+    margin: 0 auto;
+    z-index: 103;
+    bottom: 0;
+    position: absolute;
+    box-shadow: 0 -4px 5px -3px rgba(0,0,0,0.35);
+    height: 40px;
+    padding: 20px 0;
+}
+.fee-wrapper{
+    margin-left: 20px
+}
+.total{
+    font-size: 24px;
+    color: #EA5200;
+}
+.btn-wrapper{
+    padding-top: 10px;
+    padding-left: 90px;
+    position: absolute;
+    right: 100px;
+    top: 15px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-5{
+    margin-top: 5px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.text-link {
+    cursor: pointer;
+    color: $primaryColor;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+/****************Element UI******************/
+
+$fa-font-path: '~font-awesome/fonts';
+$fa-css-prefix: el-icon-fa;
+@import '~font-awesome/scss/font-awesome';
+// the specificity of this selector is annoyingly high
+[class^='#{$fa-css-prefix}-'],
+[class*=' #{$fa-css-prefix}-'] {
+    display: inline-block;
+    font-family: FontAwesome!important;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+
+.el-upload {
+    border: 2px dashed #d8dce5;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.el-dialog__header {
+    padding-left: 0px;
+    border-bottom: 1px solid $splitLineColor;
+    .el-dialog__title {
+        color: $itemContentHeaderColor;
+        font-size: 16px;
+        border-left: 3px solid $primaryColor;
+        padding-left: 15px;
+    }
+    .el-dialog__close {
+        color: $primaryColor;
+        font-weight: bold;
+    }
+}
+
+.el-dialog__body {
+    padding-top: 10px;
+}
+
+.el-dialog__footer {
+    border-top: 1px solid $splitLineColor;
+    background: $dialogFooterColor;
+}
+
+i.el-icon-arrow-left {
+    font-weight: bold;
+}
+
+.el-container {
+    height: 100%;
+}
+
+.el-menu-item-group__title {
+    color: #333;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.el-menu {
+    background: $menuBgColor;
+    border-radius: 0;
+}
+
+.el-menu-item-group {
+    .menu-title {
+        padding-left: 20px;
+    }
+}
+
+li.el-menu-item {
+    padding: 0px;
+    color: $menuTextColor;
+}
+
+li.el-menu-item.is-active {
+    padding: 0px;
+    color: $menuActiveTextColor;
+    background: $mainBgColor;
+}
+
+.el-submenu__title {
+    height: 50px;
+    line-height: 50px;
+}
+
+.el-submenu__title:hover,
+.el-menu-item:focus,
+.el-menu-item:hover {
+    background-color: $menuBgColor;
+}
+
+.el-aside {
+    background: $menuBgColor;
+}
+
+.el-dropdown-link {
+    cursor: pointer;
+    color: $primaryColor;
+    margin-left: 10px;
+    outline: inherit;
+    &:focus {
+        outline: none;
+    }
+}
+
+.el-button--black {
+    background: $buttonBlackColor;
+    color: $whiteColor;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $buttonBlackHoverColor;
+        color: $whiteColor;
+    }
+}
+
+.el-button--blue {
+    background: $whiteColor;
+    color: $primaryColor;
+    border: 1px solid $primaryBorderColor;
+    &:hover,
+    &:active,
+    &:focus {
+        background: $whiteColor;
+        color: $primaryColor;
+        border: 1px solid $primaryBorderColor;
+    }
+}
+
+.el-button--primary.is-plain {
+    background: $whiteColor;
+    color: $primaryColor;
+    border: 1px solid $primaryBorderColor;
+    &:hover,
+    &:active,
+    &:focus {
+        background: $primaryColor;
+        color: $whiteColor;
+        border: 1px solid $primaryBorderColor;
+    }
+}
+
+.el-form-item.is-success .el-input__inner,
+.el-form-item.is-success .el-textarea__inner,
+.el-form-item.is-success .el-textarea__inner:focus {
+    border-color: #d8dce5;
+}
+
+.el-form-item.is-success .el-input__inner:focus {
+    border-color: $primaryColor;
+}
+
+.el-button {
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.el-input__inner {
+    border-radius: 2px;
+}
+
+.el-input-group__append {
+    background-color: $primaryColor;
+    color: $whiteColor;
+    border-color: $primaryColor;
+    .el-button--small {
+        margin-bottom: -10px;
+    }
+}
+
+.dialog-body {
+    .live-address-group {
+        .el-input__inner {
+            border-right: 0px;
+        }
+        .el-input-group__append {
+            background-color: $dialogFooterColor;
+            color: $menuTextColor;
+            border: 1px solid $customBorderColor;
+            &:hover {
+                border-color: $primaryColor;
+                color: $primaryColor;
+                background-color: $buttonHoverColor;
+            }
+        }
+    }
+}
+
+.el-table {
+    .el-table__header-wrapper {
+        th {
+            color: $menuTextColor;
+            background: #e5f0fa;
+            padding: 5px 0px;
+            &:first-child {
+                padding-left: 10px;
+            }
+        }
+    }
+    .el-table__row {
+        .cell {
+            font-size: 14px;
+            .el-checkbox {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.el-pagination {
+    color: $menuTextColor;
+}
+
+.el-message {
+    top: 70px;
+}
+
+label.el-form-item__label {
+    padding-right: 40px;
+}

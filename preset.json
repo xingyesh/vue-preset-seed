@@ -1,0 +1,39 @@
+{
+    "useConfigFiles": true,
+    "router": false,
+    "vuex": false,
+    "unit-jest": true,
+    "cssPreprocessor": "node-sass",
+    "plugins": {
+      "@vue/cli-plugin-babel": {
+        "plugins": [
+            [
+              "component",
+              {
+                "libraryName": "element-ui",
+                "styleLibraryName": "theme-chalk"
+              }
+            ]
+          ]
+      },
+      "@vue/cli-plugin-eslint": {
+        "config": "standard",
+        "lintOn": [
+          "save",
+          "commit"
+        ]
+      }
+    },
+    "configs": {
+      "postcss": {
+        "plugins": {}
+      },
+      "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "ie >= 11"
+      ]
+    }
+  }
+  

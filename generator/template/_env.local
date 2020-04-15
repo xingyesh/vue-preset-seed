@@ -1,0 +1,3 @@
+NODE_ENV=development
+VUE_APP_BUILD_MODE=DEV
+VUE_APP_API_PATH=https://baidu.com

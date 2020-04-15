@@ -1,0 +1,45 @@
+{
+    "name": "vue-cmop-preset-seed",
+    "version": "1.0.0",
+    "description": "vue demo",
+    "main": "./generator/index.js",
+    "scripts": {
+      "lint": "eslint ./generator/",
+      "lint:fix": "eslint --fix ./generator/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/xingyesh/vue-cmop-seed.git"
+    },
+    "author": "xs",
+    "license": "MIT",
+    "homepage": "",
+    "devDependencies": {
+      "@commitlint/cli": "^7.2.1",
+      "@commitlint/config-conventional": "^7.1.2",
+      "babel-core": "^6.26.3",
+      "babel-eslint": "^7.2.3",
+      "commitizen": "^3.0.2",
+      "cz-conventional-changelog": "^2.1.0",
+      "eslint": "^5.6.1",
+      "eslint-config-standard": "^12.0.0",
+      "eslint-plugin-import": "^2.14.0",
+      "eslint-plugin-node": "^7.0.1",
+      "eslint-plugin-promise": "^4.0.1",
+      "eslint-plugin-standard": "^4.0.0",
+      "ghooks": "^2.0.4"
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      },
+      "ghooks": {
+        "pre-commit": "npm run lint",
+        "commit-msg": "commitlint -e"
+      }
+    },
+    "commitlint": {
+      "extends": ["@commitlint/config-conventional"]
+    }
+  }
+  
